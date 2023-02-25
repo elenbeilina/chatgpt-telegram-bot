@@ -29,6 +29,7 @@ public class GptAssisterBot extends TelegramLongPollingBot {
     return botProperties.getUsername();
   }
 
+  @SneakyThrows
   @Override
   public void onUpdateReceived(Update update) {
     if (update.hasMessage()) {
@@ -36,7 +37,11 @@ public class GptAssisterBot extends TelegramLongPollingBot {
       var chatId = String.valueOf(msg.getChatId());
 
       if (msg.getText().equals("/start")) {
-        sendNotification(chatId, "Enter request for ChatGpt:");
+        String greeting = """
+            Hello %s!
+            Enter your request for ChatGpt:
+            """;
+        sendNotification(chatId, String.format(greeting, msg.getChat().getFirstName()));
       } else {
         var reply = chatGpt.sendToChatGPT(msg.getText());
         sendNotification(chatId, reply);
