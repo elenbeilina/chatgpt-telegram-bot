@@ -13,7 +13,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
-public class BotConfiguration {
+public class BotConfig {
   private final GptAssisterBot gptAssisterBot;
 
   @EventListener({ContextRefreshedEvent.class})

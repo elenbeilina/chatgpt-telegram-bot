@@ -10,4 +10,6 @@ import org.springframework.context.annotation.Configuration;
 public class BotProperties {
   private String username;
   private String token;
+  private String chatGptToken;
+  private String chatGptUrl;
 }
