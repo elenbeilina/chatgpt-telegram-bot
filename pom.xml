@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.aqualen</groupId>
     <artifactId>chatgpt-telegram-bot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>chatgpt-telegram-bot</name>
-    <description>chatgpt-telegram-bot</description>
+    <description>This is java spring-boot app that is using OpenAPI through Telegram bot.</description>
     <properties>
         <java.version>17</java.version>
         <telegram.version>6.5.0</telegram.version>
