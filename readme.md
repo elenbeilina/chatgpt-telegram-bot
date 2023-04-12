@@ -49,7 +49,11 @@ It is configured using spring properties.
     --replication-policy="automatic" \
     --data-file=-
    ```
-7. Enable the [Cloud Build API](https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com) in the target Cloud project.
-8. Follow this [instruction](https://cloud.google.com/build/docs/automating-builds/github/build-repos-from-github#installing_the_google_cloud_build_app) for building repo from Github.
+7. Follow this [instruction](https://cloud.google.com/build/docs/automating-builds/github/connect-repo-github) for building repo from Github.
+8. Add 3 roles to cloudbuild.gserviceaccount.com on the IAM page:
+   — App Engine Admin
+   — Secret Manager Admin
+9. [Enable](https://console.developers.google.com/apis/library/appengine.googleapis.com) App Engine Admin API
+10. Create build trigger via this [instruction](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
 ---
 ![logo.png](src/main/resources/logo.png)
