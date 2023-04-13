@@ -4,7 +4,9 @@ steps:
     args: ["test"]
   - name: gcr.io/cloud-builders/mvn
     entrypoint: mvn
-    args: ["package", "-Dmaven.test.skip=true","appengine:deploy"]
+    args: ["package", "-Dmaven.test.skip=true"]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: ["gcloud", "app", "deploy"]
   - name: gcr.io/cloud-builders/docker
-    args: [ 'build', '-t', '${PROJECT_ID}/${REPO_NAME}','.' ]
-images: ['${PROJECT_ID}/chatgpt-telegram-bot']
+    args: [ 'build', '-t', '$PROJECT_ID/$REPO_NAME','.' ]
+images: ['$PROJECT_ID/$REPO_NAME']
