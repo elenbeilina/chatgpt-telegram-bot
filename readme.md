@@ -53,6 +53,7 @@ It is configured using spring properties.
 8. Add 3 roles to cloudbuild.gserviceaccount.com on the IAM page:
    — App Engine Admin
    — Secret Manager Admin
+   — Service Account User
 9. [Enable](https://console.developers.google.com/apis/library/appengine.googleapis.com) App Engine Admin API.
 10. Create build trigger via this [instruction](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers), select 1st generation.
 11. Run trigger.
