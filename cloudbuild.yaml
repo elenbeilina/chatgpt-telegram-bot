@@ -1,7 +1,10 @@
 steps:
-  - name: maven:3-eclipse-temurin-17-alpine
+  - name: gcr.io/cloud-builders/mvn
     entrypoint: mvn
     args: ["test"]
-  - name: maven:3-eclipse-temurin-17-alpine
+  - name: gcr.io/cloud-builders/mvn
     entrypoint: mvn
     args: ["package", "-Dmaven.test.skip=true","appengine:deploy"]
+  - name: gcr.io/cloud-builders/docker
+    args: [ 'build', '-t', '${PROJECT_ID}/${REPO_NAME}','.' ]
+images: ['${PROJECT_ID}/chatgpt-telegram-bot']
