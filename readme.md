@@ -4,7 +4,7 @@ This is java spring-boot app that is using OpenAPI through Telegram bot.
 #### Configuration
 It is configured using spring properties.
 > Important! \
-> In order to use this bot this properties needs to be changed:
+> In order to use this bot these properties needs to be changed:
 > - bot.username
 > - bot.token
 > - bot.chat-gpt-token
@@ -55,7 +55,8 @@ It is configured using spring properties.
    — Secret Manager Admin
    — Service Account User
 9. [Enable](https://console.developers.google.com/apis/library/appengine.googleapis.com) App Engine Admin API.
-10. Create build trigger via this [instruction](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers), select 1st generation.
-11. Run trigger.
+10. [Enable](https://console.cloud.google.com/apis/library/containerregistry.googleapis.com) Google Container Registry API.
+11. Create build trigger via this [instruction](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers), select 1st generation.
+12. Run trigger.
 ---
 ![logo.png](src/main/resources/logo.png)
