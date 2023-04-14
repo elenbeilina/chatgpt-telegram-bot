@@ -1,2 +1,5 @@
 runtime: java17
 instance_class: F1
+env: standard
+manual_scaling:
+  instances: 1
