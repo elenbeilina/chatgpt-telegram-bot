@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Slf4j
 @Component
@@ -35,6 +36,12 @@ public class GptAssisterBot extends TelegramLongPollingBot {
     if (update.hasMessage()) {
       var msg = update.getMessage();
       var chatId = String.valueOf(msg.getChatId());
+      if(!botProperties.getAccessList().contains(msg.getChat().getUserName())){
+        if (msg.getText().equals("/start")) {
+          sendNotification(chatId, "Not allowed to use this bot!");
+        }
+        throw new TelegramApiException("Not allowed to use this bot!");
+      }
 
       if (msg.getText().equals("/start")) {
         String greeting = """
